@@ -18,15 +18,13 @@ const MainNavigation = () => {
   return (
     <>
       {drawerIsOpen && <Backdrop onClick={handlerOpenDrawer} />}
-      {drawerIsOpen ? (
-        <SideDrawer>
-          <nav className="main-navigation__drawer-nav">
-            <NavLinks />
-          </nav>
-        </SideDrawer>
-      ) : (
-        ''
-      )}
+
+      <SideDrawer show={drawerIsOpen} onClick={handlerOpenDrawer}>
+        <nav className="main-navigation__drawer-nav">
+          <NavLinks />
+        </nav>
+      </SideDrawer>
+
       <MainHeader>
         <button
           className="main-navigation__menu-btn"
